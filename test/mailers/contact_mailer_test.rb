@@ -1,9 +1,9 @@
 require 'test_helper'
 
 class ContactMailerTest < ActionMailer::TestCase
-  test "welome" do
-    mail = ContactMailer.welome
-    assert_equal "Welome", mail.subject
+  test "welcome" do
+    mail = ContactMailer.welcome
+    assert_equal "Welcome", mail.subject
     assert_equal ["to@example.org"], mail.to
     assert_equal ["from@example.com"], mail.from
     assert_match "Hi", mail.body.encoded
