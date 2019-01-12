@@ -1,7 +1,4 @@
 class FreelancersController < ApplicationController
-  def index
-
-  end
 
   def new
     @freelancer = Freelancer.new
