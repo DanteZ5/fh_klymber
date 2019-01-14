@@ -5,9 +5,6 @@ class Request < ApplicationRecord
   validates :bio, presence: true, length: { minimum: 10 }
   validates :key, presence: true, uniqueness: true
 
-  validates_inclusion_of :status, in: %w(unconfirmed confirmed accepted expired),
-                                  allow_blank: true
-
   scope :unconfirmed, -> { where(status: 'unconfirmed') }
   scope :confirmed, -> { where(status: 'confirmed') }
   scope :accepted, -> { where(status: 'accepted') }
