@@ -12,5 +12,6 @@ class Request < ApplicationRecord
 
   def accept!
     self.status = 'accepted'
+    self.save
   end
 end
