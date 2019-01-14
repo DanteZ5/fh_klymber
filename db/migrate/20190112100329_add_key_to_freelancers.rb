@@ -1,5 +1,5 @@
-class AddKeyToFreelancers < ActiveRecord::Migration[5.2]
+class AddKeyToRequests < ActiveRecord::Migration[5.2]
   def change
-    add_column :freelancers, :key, :string
+    add_column :requests, :key, :string
   end
 end
