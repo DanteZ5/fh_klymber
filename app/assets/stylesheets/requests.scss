@@ -1,3 +1,45 @@
 // Place all the styles related to the Requests controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  h1{
+    color: white;
+    text-shadow: 0 0 20px grey;
+    font-size: 55px;
+    font-family: handwritting;
+  }
+}
+
+.home {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.arrow {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 8px;
+  p {
+    color: white;
+    text-shadow: 0 0 10px grey;
+    font-size: 95px;
+    font-family: handwritting;
+    margin: 0;
+    padding: 0px;
+  }
+}
+
+#arr2 {
+  bottom: 30px;
+}
+
+.scroll:hover{
+  text-shadow: 0 0 20px white;
+}

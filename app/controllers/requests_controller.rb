@@ -1,3 +1,5 @@
+require 'date'
+
 class RequestsController < ApplicationController
 
   def new
@@ -20,6 +22,7 @@ class RequestsController < ApplicationController
   def confirmation
     @request = Request.find_by(key: params[:key])
     @request.status = 'confirmed'
+    @request.last_mailing = Date.today
     @request.save
   end
 
