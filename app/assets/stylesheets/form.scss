@@ -32,8 +32,11 @@
   input[type="submit"] {
     width: 300px;
     height: 40px;
-    background: blue;
+    background: darkred;
     color: white;
+  }
+  input[type="submit"]:hover {
+    box-shadow: 0 0 10px white;
   }
   abbr {
     color: blue;
