@@ -2,7 +2,13 @@
   <% if flash[:notice] %>
     <div><%= flash[:notice] %></div>
   <% else %>
-
+    <%= simple_form_for @request do |f| %>
+      <%= f.input :name, label: "Prénom et Nom", placeholder:'François Hameau' %>
+      <%= f.input :email, label: "Adresse email", placeholder:'f.hameau@gmail.com'%>
+      <%= f.input :phone, label: "Numéro de téléphone", placeholder:'06 58 01 07 81' %>
+      <%= f.input :bio, label: "Petite biographie", placeholder:'Je parle de moi' %>
+      <%= f.button :submit, "Faire une demande" %>
+    <% end %>
 
   <% end %>
 
