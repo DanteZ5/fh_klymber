@@ -17,6 +17,12 @@ class RequestsController < ApplicationController
     end
   end
 
+  def confirmation
+    @request = Request.find_by(key: params[:key])
+    @request.status = 'confirmed'
+    @request.save
+  end
+
   private
 
   def request_params

@@ -1,5 +1,7 @@
 <h1>Bonjour <%= @request.name %></h1>
 
 <p>
-
+ <%= link_to confirmation_url(key: @request.key)  do %>
+    <button>Je confirme</button>
+ <% end %>
 </p>
