@@ -1,3 +1,5 @@
+require 'contact_mailer.rb'
+
 desc 'Mailing for the waiting list'
 
 task :mailing do
