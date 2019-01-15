@@ -20,7 +20,7 @@ class RequestsController < ApplicationController
   def confirmation
     @request = Request.find(params[:id])
 
-    if Request.accepted.count < 20 && WaitingList.count == 0
+    if Request.accepted.count < 20
       @request.accept!
     elsif WaitingList.find_by(request: @request) == nil
       WaitingList.create(request: @request, date: Date.today, expired: false)
