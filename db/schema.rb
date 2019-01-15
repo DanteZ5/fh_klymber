@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_15_081649) do
+ActiveRecord::Schema.define(version: 2019_01_15_141307) do
 
   create_table "requests", force: :cascade do |t|
     t.string "name"
@@ -23,10 +23,11 @@ ActiveRecord::Schema.define(version: 2019_01_15_081649) do
   end
 
   create_table "waiting_lists", force: :cascade do |t|
-    t.bigint "request_id"
+    t.integer "request_id"
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "expired"
     t.index ["request_id"], name: "index_waiting_lists_on_request_id"
   end
 

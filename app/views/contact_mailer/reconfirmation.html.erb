@@ -1,5 +1,8 @@
-<h1>Contact#reconfirmation</h1>
-
 <p>
-  <%= @greeting %>, find me in app/views/contact_mailer/reconfirmation.html.erb
-</p>
+    Bonjour <%= @request.name %>,<br><br>
+    Tu es maintenant numéro <strong><%= WaitingList.all.find_index(WaitingList.find_by(request: @request)) + 1 %> </strong>sur la liste d'attente. <br>
+    Souhaites-tu rester sur notre liste d'attente ?
+  </p><br>
+   <%= link_to reconfirmation_url(id: @request.id)  do %>
+      <button style="color: darkred; border-radius: 30px; padding: 10px 30px; font-size: 20px; border: 1px solid darkred; background-color: white">Je reste sur la liste</button>
+   <% end %>

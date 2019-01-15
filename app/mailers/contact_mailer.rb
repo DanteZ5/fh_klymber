@@ -15,9 +15,8 @@ class ContactMailer < ApplicationMailer
   #
   #   en.contact_mailer.reconfirmation.subject
   #
-  def reconfirmation
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+  def reconfirmation(request)
+    @request = request
+    mail to: request.email, subject: "C'est bientôt ton tour"
   end
 end

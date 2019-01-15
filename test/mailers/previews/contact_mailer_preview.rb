@@ -8,7 +8,7 @@ class ContactMailerPreview < ActionMailer::Preview
 
   # Preview this email at http://localhost:3000/rails/mailers/contact_mailer/reconfirmation
   def reconfirmation
-    ContactMailer.reconfirmation
+    ContactMailer.reconfirmation(Request.first)
   end
 
 end

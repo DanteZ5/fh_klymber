@@ -23,13 +23,20 @@ class RequestsController < ApplicationController
 
     if Request.accepted.count < 20 && WaitingList.count == 0
       @request.accept!
-    else
-      WaitingList.create(request: @request, date: Date.today)
+    elsif WaitingList.find_by(request: @request) == nil
+      WaitingList.create(request: @request, date: Date.today, expired: false)
       @request.status = 'confirmed'
     end
     @request.save
   end
 
+  def reconfirmation
+    @request = Request.find(params[:id])
+    @waiting_list = WaitingList.find_by(request: @request)
+    @waiting_list.expired = false
+    @waiting_list.date = Date.today
+    @waiting_list.save
+  end
   private
 
   def request_params

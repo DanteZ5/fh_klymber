@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: 'requests#new'
   resources :requests, only: [:new, :create]
   get 'requests/confirmation', to: "requests#confirmation", as: :confirmation
+  get 'requests/reconfirmation', to: "requests#reconfirmation", as: :reconfirmation
 end
