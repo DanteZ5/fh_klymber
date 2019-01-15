@@ -1,7 +1,16 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+puts 'destroying all requests'
+WaitingList.destroy_all
+Request.destroy_all
+
+puts 'creating 40 new requests'
+40.times do
+  r = Request.create(name: Faker::Name.name,
+                 email: Faker::Internet.email,
+                 phone: "0123456#{rand(100...999)}",
+                 bio: Faker::BackToTheFuture.quote,
+                 status: ['unconfirmed', 'confirmed', 'accepted', 'expired'].sample)
+
+  WaitingList.create(request_id: r.id, date: Date.today, expired: [true, false].sample) if r.status == 'confirmed'
+end

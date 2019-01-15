@@ -7,10 +7,14 @@ task :mailing do
   require File.join(Rails.root, 'app', 'controllers', 'requests_controller.rb')
 
 # Check WaitingList's requests older than 3 months
-  WaitingList.all.each do |request|
-    if request.date + 3.months >= Date.today
-      ContactMailer.reconfirmation(request.request).deliver_now
-      request.expired = true
+  WaitingList.all.each do |waiting_list|
+    if waiting_list.expired?
+      waiting_list.request.status = 'expired'
+      waiting_list.destroy
+    elsif waiting_list.date + 3.months >= Date.today
+      puts 'on tient quelque chose'
+      ContactMailer.reconfirmation(waiting_list.request).deliver_now
+      waiting_list.expired = true
     end
   end
 end
