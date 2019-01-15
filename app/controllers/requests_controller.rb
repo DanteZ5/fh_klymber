@@ -1,7 +1,6 @@
 require 'date'
 
 class RequestsController < ApplicationController
-
   def new
     @request = Request.new
   end
@@ -37,6 +36,7 @@ class RequestsController < ApplicationController
     @waiting_list.date = Date.today
     @waiting_list.save
   end
+
   private
 
   def request_params
