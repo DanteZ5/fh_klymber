@@ -3,7 +3,7 @@
 <h1>Bonjour <%= @request.name %></h1>
 
 <p>
- <%= link_to confirmation_url(key: @request.key)  do %>
+ <%= link_to confirmation_url(id: @request.id)  do %>
     <button>Je confirme</button>
  <% end %>
 </p>

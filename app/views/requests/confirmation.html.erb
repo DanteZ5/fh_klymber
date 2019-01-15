@@ -1,5 +1,16 @@
-<h1>Confirmation</h1>
+<div class="wrapper">
+  <div class='home'>
+    <h1>Klymber coworking</h1>
+  </div>
 
-<%= @request.name  %>
-<%= @request.status %>
-<%= @request.last_mailing %>
+  <div class="request-form">
+    <% if @request.status == 'confirmed' %>
+      <h3>Merci <%= @request.name  %></h3>
+      <p>Tu es numéro <strong><%= WaitingList.all.find_index(WaitingList.find_by(request: @request)) + 1 %> </strong>sur la liste d'attente</p>
+    <% else %>
+      <h3>Merci <%= @request.name  %></h3>
+      <p>Ta demande a été acceptée </p>
+    <% end %>
+  </div>
+
+</div>
