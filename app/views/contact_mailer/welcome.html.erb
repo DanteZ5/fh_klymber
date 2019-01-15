@@ -1,9 +1,8 @@
-<% require 'date' %>
 
-<h1>Bonjour <%= @request.name %></h1>
-
-<p>
- <%= link_to confirmation_url(id: @request.id)  do %>
-    <button>Je confirme</button>
- <% end %>
-</p>
+  <p>
+    Bonjour <%= @request.name %>,<br><br>
+    Nous avez bien reçu ta demande d'inscription. Merci de confirmer ton email afin que celle-ci soit traitée.
+  </p><br>
+   <%= link_to confirmation_url(id: @request.id)  do %>
+      <button style="color: darkred; border-radius: 30px; padding: 10px 30px; font-size: 20px; border: 1px solid darkred; background-color: white">Je confirme</button>
+   <% end %>

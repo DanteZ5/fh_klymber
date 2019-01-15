@@ -1,16 +1,17 @@
 <div class="wrapper">
   <% if flash[:notice] %>
-    <div><%= flash[:notice] %></div>
+    <div class="request-form" style=" font-size: 20px;
+  font-family: sans-serif;"><%= flash[:notice] %></div>
   <% else %>
     <div class='home'>
       <h1>Klymber coworking</h1>
     </div>
     <div class="request-form">
       <%= simple_form_for @request do |f| %>
-        <%= f.input :name, label: "Prénom et Nom", placeholder:'François Hameau' %>
-        <%= f.input :email, label: "Adresse email", placeholder:'f.hameau@gmail.com', error:"L'email entré est invalide"%>
-        <%= f.input :phone, label: "Numéro de téléphone", placeholder:'06 58 01 07 81', error:"Le numéro entré est invalide" %>
-        <%= f.input :bio, label: "Petite biographie", placeholder:'Je parle de moi', error:"La biographie doit être de 10 charactères minimum" %>
+        <%= f.input :name, label: "Prénom et Nom", placeholder:'François Hameau'%>
+        <%= f.input :email, label: "Adresse email", placeholder:'f.hameau@gmail.com'%>
+        <%= f.input :phone, label: "Numéro de téléphone", placeholder:'06 58 01 07 81' %>
+        <%= f.input :bio, label: "Petite biographie", placeholder:'Je parle de moi'%>
         <%= f.button :submit, "Faire une demande" %>
       <% end %>
     </div>

@@ -10,7 +10,7 @@
   height: 100vh;
   h1{
     color: white;
-    text-shadow: 0 0 20px grey;
+    text-shadow: 0 0 30px grey;
     font-size: 55px;
     font-family: handwritting;
   }
@@ -21,20 +21,7 @@
   text-align: center;
 }
 
-.arrow {
-  width: 100%;
-  text-align: center;
-  position: absolute;
-  bottom: 8px;
-  p {
-    color: white;
-    text-shadow: 0 0 10px grey;
-    font-size: 95px;
-    font-family: handwritting;
-    margin: 0;
-    padding: 0px;
-  }
-}
+
 
 #arr2 {
   bottom: 30px;

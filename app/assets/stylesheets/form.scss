@@ -46,3 +46,10 @@
     display: block;
   }
 }
+
+@media screen and (max-width: 640px) {
+  .request-form {
+    margin: 10px 5px;
+    min-width: 200px;
+  }
+}
